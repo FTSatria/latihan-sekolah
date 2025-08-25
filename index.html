@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profil Saya</title>
+  <style>
+    /* --- RESET --- */
+    * {
+      margin: 0; padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: #f4f4f9;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(135deg, #4a90e2, #9013fe);
+      color: #fff;
+      padding: 2rem 1rem 3rem;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      opacity: 0.9;
+    }
+
+    nav {
+      margin-top: 1rem;
+    }
+
+    nav a {
+      color: #fff;
+      margin: 0 10px;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 5px 10px;
+      border-radius: 5px;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      background: rgba(255,255,255,0.2);
+    }
+
+    nav a.active {
+      background: #ffdd57;
+      color: #000;
+    }
+
+    .theme-toggle {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      background: #fff;
+      color: #333;
+      border: none;
+      padding: 8px 15px;
+      border-radius: 20px;
+      cursor: pointer;
+      font-size: 0.9rem;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .theme-toggle:hover {
+      background: #ffdd57;
+      color: #000;
+    }
+
+    section {
+      max-width: 1000px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background: #fff;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      animation: fadeInUp 1s ease-in-out;
+    }
+
+    section h2 {
+      margin-bottom: 1rem;
+      color: #4a90e2;
+    }
+
+    .about img {
+      width: 150px;
+      border-radius: 50%;
+      margin-bottom: 1rem;
+      border: 4px solid #4a90e2;
+    }
+
+    .skills ul {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 15px;
+      list-style: none;
+    }
+
+    .skills li {
+      background: #4a90e2;
+      color: #fff;
+      padding: 10px;
+      border-radius: 10px;
+      text-align: center;
+      transition: 0.3s;
+      cursor: pointer;
+    }
+
+    .skills li:hover {
+      background: #9013fe;
+      transform: scale(1.1);
+    }
+
+    .projects .card {
+      background: #f4f4f9;
+      padding: 1rem;
+      border-radius: 10px;
+      margin: 1rem 0;
+      transition: 0.3s;
+      cursor: pointer;
+    }
+
+    .projects .card:hover {
+      background: #e3e3ff;
+      transform: translateY(-5px);
+    }
+
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      background: #333;
+      color: #fff;
+      margin-top: 2rem;
+    }
+
+    @keyframes fadeInUp {
+      from {opacity: 0; transform: translateY(20px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+
+    /* DARK MODE */
+    body.dark {
+      background: #121212;
+      color: #ddd;
+    }
+
+    body.dark header {
+      background: linear-gradient(135deg, #222, #444);
+      color: #fff;
+    }
+
+    body.dark nav a {
+      color: #ffdd57;
+    }
+
+    body.dark nav a.active {
+      background: #ffdd57;
+      color: #000;
+    }
+
+    body.dark section {
+      background: #1e1e1e;
+      box-shadow: 0 4px 10px rgba(255,255,255,0.1);
+    }
+
+    body.dark section h2 {
+      color: #ffdd57;
+    }
+
+    body.dark .skills li {
+      background: #444;
+      color: #ffdd57;
+    }
+
+    body.dark .skills li:hover {
+      background: #666;
+      color: #fff;
+    }
+
+    body.dark .projects .card {
+      background: #2a2a2a;
+    }
+
+    body.dark .projects .card:hover {
+      background: #333;
+    }
+
+    body.dark footer {
+      background: #000;
+    }
+
+    body.dark .theme-toggle {
+      background: #444;
+      color: #fff;
+    }
+
+    body.dark .theme-toggle:hover {
+      background: #ffdd57;
+      color: #000;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <button class="theme-toggle">🌙 Dark</button>
+    <h1>Fajar Tri Satria</h1>
+    <p>Guru Informatika | Web Developer | Tech Enthusiast</p>
+    <nav>
+      <a href="#about" class="active">Tentang Saya</a>
+      <a href="#skills">Keahlian</a>
+      <a href="#projects">Proyek</a>
+      <a href="#contact">Kontak</a>
+    </nav>
+  </header>
+
+  <!-- ABOUT -->
+  <section id="about" class="about">
+    <div style="text-align:center">
+      <img src="https://via.placeholder.com/150" alt="Foto Profil">
+      <h2>Tentang Saya</h2>
+      <p>
+        Halo! Saya seorang guru Informatika sekaligus pengembang web yang
+        bersemangat dalam dunia teknologi. Saya suka membangun aplikasi,
+        mengajar, serta belajar hal-hal baru tentang pemrograman.
+      </p>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills" class="skills">
+    <h2>Keahlian</h2>
+    <ul>
+      <li>HTML & CSS</li>
+      <li>JavaScript</li>
+      <li>PHP & MySQL</li>
+      <li>Python</li>
+      <li>Java</li>
+      <li>Android Studio</li>
+    </ul>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="projects">
+    <h2>Proyek Saya</h2>
+    <div class="card">
+      <h3>Website Booking Studio</h3>
+      <p>Aplikasi web untuk pemesanan studio dengan integrasi Google Calendar.</p>
+    </div>
+    <div class="card">
+      <h3>Aplikasi PrintGila</h3>
+      <p>Sistem cetak online dengan perhitungan otomatis harga per halaman.</p>
+    </div>
+    <div class="card">
+      <h3>Modul Ajar Informatika</h3>
+      <p>Modul ajar interaktif untuk siswa SMK yang berfokus pada berpikir komputasional.</p>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="contact">
+    <h2>Kontak</h2>
+    <p>Email: <a href="mailto:fajar@example.com">fajar@example.com</a></p>
+    <p>LinkedIn: <a href="#">linkedin.com/in/fajar</a></p>
+    <p>GitHub: <a href="#">github.com/fajar</a></p>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2025 Fajar Tri Satria. Semua Hak Dilindungi.</p>
+  </footer>
+
+  <script>
+    // Animasi scroll (fade in)
+    const sections = document.querySelectorAll("section");
+    window.addEventListener("scroll", () => {
+      sections.forEach(sec => {
+        const top = window.scrollY;
+        const offset = sec.offsetTop - 200;
+        const height = sec.offsetHeight;
+        if (top >= offset && top < offset + height) {
+          sec.style.animation = "fadeInUp 1s ease-in-out";
+        }
+      });
+    });
+
+    // Dark mode toggle
+    const toggleBtn = document.querySelector(".theme-toggle");
+    toggleBtn.addEventListener("click", () => {
+      document.body.classList.toggle("dark");
+      if (document.body.classList.contains("dark")) {
+        toggleBtn.textContent = "☀️ Light";
+      } else {
+        toggleBtn.textContent = "🌙 Dark";
+      }
+    });
+
+    // Highlight menu aktif saat scroll
+    const navLinks = document.querySelectorAll("nav a");
+    window.addEventListener("scroll", () => {
+      let current = "";
+      sections.forEach(sec => {
+        const sectionTop = sec.offsetTop - 150;
+        const sectionHeight = sec.offsetHeight;
+        if (pageYOffset >= sectionTop && pageYOffset < sectionTop + sectionHeight) {
+          current = sec.getAttribute("id");
+        }
+      });
+
+      navLinks.forEach(link => {
+        link.classList.remove("active");
+        if (link.getAttribute("href") === "#" + current) {
+          link.classList.add("active");
+        }
+      });
+    });
+  </script>
+</body>
+</html>
